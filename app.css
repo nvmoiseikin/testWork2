@@ -1,0 +1,91 @@
+header{
+    font-size: 24px;
+    text-align: center;
+}
+main{
+    width: 100%;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+article{
+    margin: 30px 0;
+}
+
+/*** 1 задание ***/
+.sortInput, .sortDesc{
+    font-size: 16px;
+    border-radius: 5px;
+    margin: 0 0 0 20px;
+}
+.sortInput{
+    width: 400px
+}
+.sortButton{
+    height: 24px;
+    margin: 0 0 0 20px;
+    background-color: aqua;
+    outline: none;
+    border: none;
+}
+
+/*** 2 задание ***/
+.flag{
+    line-height: 12px;
+}
+.line{
+    background-color: #ccc;
+    display: inline-block;
+}
+.color_0{
+    color: white;
+}
+.color_1{
+    color: blue;
+}
+.color_2{
+    color: red;
+}
+
+/*** 3-4 задание ***/
+.clear-fix{
+    width: 100%;
+    clear: both;
+}
+.form-group{
+
+    margin: 20px 0;
+}
+.left{
+    margin: 0 0 0 20px;
+    float: left;
+}
+.phonesWrap{
+    position: relative;
+}
+.input{
+    font-size: 16px;
+    border-radius: 5px;
+}
+.addPhone{
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: aqua;
+    position: absolute;
+    bottom: 0;
+    left: 350px;
+}
+.label{
+    width: 100px;
+}
+
+/*** 5 задание ***/
+.submit{
+    height: 24px;
+    margin: 0 0 0 20px;
+    background-color: aqua;
+    outline: none;
+    border: none;
+}

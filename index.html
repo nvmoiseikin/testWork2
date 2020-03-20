@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>TestWork</title>
+
+    <script src="jquery.3.4.1.js"></script>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    <link href="app.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <header>Тестовое задание (Никита Моисейкин)</header>
+    <main id="app">
+        <article class="firstEx">
+            <h4 class="title">1 Задание</h4>
+            <input class="sortInput" placeholder="Введите массив чисел через пробел">
+            <select class="sortDesc">
+                <option value="1" selected>По возрастанию</option>
+                <option value="-1">По убыванию</option>
+            </select>
+            <button class="sortButton">Отсортировать</button>
+        </article>
+        <article class="secondEx">
+            <h4 class="title">2 Задание</h4>
+            <div class="flag"></div>
+        </article>
+        <article class="thirdFourthEx">
+            <h4 class="title">3-4 Задание</h4>
+            <form id="form" method="post" action="#">
+                <div class="form-group">
+                    <label class="label left">Имя:</label>
+                    <input class="input left" type="text" name="firstname" placeholder= "Введите имя">
+                    <div class="clear-fix"></div>
+                </div>
+                <div class="form-group">
+                    <label class="label left">Фамилия:</label>
+                    <input class="input left" type="text" name="lastname" placeholder="Введите фамилию">
+                    <div class="clear-fix"></div>
+                </div>
+                <div class="phonesWrap">
+                    <div class="form-group phone">
+                        <label class="label left">Телефон:</label>
+                        <input class="input left" type="text" name ="phone" placeholder="Введите телефон">
+                        <div class="clear-fix"></div>
+                    </div>
+                    <div class="addPhone">+</div>
+                </div>
+            </form>
+        </article>
+        <article class="fifthEx">
+            <h4 class="title">5 Задание</h4>
+            <form id="form2" method="post" action="#">
+                <div class="form-group">
+                    <label class="label left">ФИО:</label>
+                    <input class="input left name" type="text" name="firstname" placeholder= "Введите имя">
+                    <div class="clear-fix"></div>
+                </div>
+                <div class="form-group">
+                    <label class="label left">Телефон:</label>
+                    <input class="input left phone" type="text" name="lastname" placeholder="Введите фамилию">
+                    <div class="clear-fix"></div>
+                </div>
+                <div class="phonesWrap">
+                    <div class="form-group phone">
+                        <label class="label left">Комментарий:</label>
+                        <input class="input left comment" type="text" name ="phone" placeholder="Введите телефон">
+                        <div class="clear-fix"></div>
+                    </div>
+                </div>
+                <button class="submit" type="submit">Send</button>
+            </form>
+        </article>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
