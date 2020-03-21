@@ -1,0 +1,60 @@
+P.S. Тестировал немного на дркгой базе, так что в именах может быть ошибка
+***** 1 *****
+SELECT id, name, salary
+FROM employee a
+where a.salary = (SELECT max(salary) from employee b
+                  where a.department_id = b.department_id)
+
+**** 2 ****
+SELECT department_id FROM employee a
+where (SELECT count(*) FROM employee b
+       WHERE a.department_id = b.department_id) < 4
+
+SELECT a.department_id, count(*) as count
+FROM employee a
+group BY a.department_id
+
+
+**** 3 ****
+with sum_salary as ( select department_id, sum(salary) salary
+    from   employee
+    group  by department_id )
+select department_id, salary
+from   sum_salary a
+where  a.salary = ( select max(salary) from sum_salary )
+
+select count(*) from employees where department_id = "d001"
+select sum(salary) from employees where department_id = "d005"
+
+
+**** 4 ****
+INSERT INTO `department` (`name`) VALUES ('Новый отдел')
+
+
+**** 5 ****
+INSERT INTO `employee`(`name`, `salary`, `department_id`, `chief_id`) VALUES ("Директор", 70000 , (select id from `department` where name = 'Новый отдел') , NUll)
+
+Можно знаения chief_id & department_id хранить в переменных а запрос переписать в функцию
+INSERT INTO `employee`(`name`, `salary`, `department_id`, `chief_id`) VALUES
+("Сотрудник1", 40000 , (select id from `department` where name = 'Новый отдел') ,
+(select a.id from `department` inner join `employees` a on department.id = a.department_id where department.name = 'Новый отдел' and a.chief_id is NUll)),
+("Сотрудник2", 45000 , (select id from `department` where name = 'Новый отдел') ,
+(select a.id from `department` inner join `employees` a on department.id = a.department_id where department.name = 'Новый отдел' and a.chief_id is NUll)),
+("Сотрудник3", 42000 , (select id from `department` where name = 'Новый отдел') ,
+(select a.id from `department` inner join `employees` a on department.id = a.department_id where department.name = 'Новый отдел' and a.chief_id is NUll))
+
+**** 6 ****
+DELETE employee FROM employee
+INNER JOIN department
+WHERE employee.department_id = department.id
+AND department.name = 'Новый отдел'
+
+**** 7 ****
+UPDATE employee
+INNER JOIN department
+ON employee.department_id = department.id
+SET employees.department_id = "002"
+WHERE department.name = "Новый отдел"
+
+UPDATE department set id = "002"
+where name = "Новый отдел"
